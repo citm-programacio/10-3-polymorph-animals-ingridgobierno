@@ -15,7 +15,7 @@ public:
 };
 class Dog : public Animal {
 public:
-    
+    virtual ~Dog() {}
     void speak() override {
         cout << "Woof Woof!" << endl;
     }
@@ -37,15 +37,18 @@ public:
 
 int main()
 {
-    Dog gos;
+    //Dog gos;
     Cat gat;
     Animal ant;
+     
+    Animal* gos = new Dog;
 
     ant.speak();
     ant.eat();
-    gos.speak();
-    gos.eat();
+    gos->speak();
+    gos->eat();
     gat.speak();
     gat.eat();
+    delete gos;
 }
 
